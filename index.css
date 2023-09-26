@@ -1,6 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
 #container{
     background-color: aqua;
 }
 
+header{
+    /* max-height: 500vh; */
+    background-color: rgb(192, 188, 196);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto
+}
+
+.logo img{
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    margin: 1px;
+    padding: 5px 5px;
+}
+
+.center input {
+    border-radius: 19px;
+    padding: 10px;
+    margin: 17px;
+    width: 214px;
+    border: 2px solid black;
+  }
+
+.center button{
+    border-radius: 19px;
+    padding: 10px;
+    margin: 5px;
+    width: 50px;
+    border: 2px solid black;
+}
 
 
+.icon img{
+    width: 80px;
+    height: 80px;
+    border-radius: 22px;
+    margin: 1px;
+    padding: 5px 5px;
+    
+}
