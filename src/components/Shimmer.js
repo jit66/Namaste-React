@@ -1,21 +1,13 @@
-
-// const Shimmer = () =>{
-//     return <h1>Loading......</h1>
-// }
-
 import React from "react";
-import { ShimmerSimpleGallery } from "react-shimmer-components";
 
 const Shimmer = () => {
-
-    return (
-        <>
-        {/* <ShimmerSimpleGallery imageType="circular" imageHeight={200} caption /> */}
-        {/* <ShimmerSimpleGallery card imageHeight={300} /> */}
-        <ShimmerSimpleGallery card imageHeight={300} caption />
-      </>
-    );
-}
-
+  return (
+    <div className="restaurant-list">
+      {Array(10).fill("").map((e,index) => (
+        <div key={index} className="shimmer-card" ></div>
+      ))}
+    </div>
+  );
+};
 
 export default Shimmer;

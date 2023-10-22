@@ -65,11 +65,21 @@
     opacity: 1; /* Firefox */
   }
 
+/* shimmer */
+
+.shimmer-card{
+    width: 220px;
+    height: 300px;
+    margin: 10px;
+    background-color: lightgray;
+}
+
 .restaurant-list{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
     gap: 15px;
+
 }
 
 .card{
@@ -104,7 +114,14 @@
     min-height: 40px;
 }
 
-.restaurant-list{
+/* .restaurant-list{
     display: flex;
     flex-wrap: wrap;
+} */
+
+.menu{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    
 }
