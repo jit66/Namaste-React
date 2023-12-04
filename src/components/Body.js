@@ -16,12 +16,9 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log(useState());
-
   useEffect(() => {
     getRestaurants();
   }, []);
-  console.log("render");
 
   async function getRestaurants() {
     try {
