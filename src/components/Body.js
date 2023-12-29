@@ -3,13 +3,8 @@ import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-function filterResto(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
+import { filterResto } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -47,6 +42,14 @@ const Body = () => {
       const data = filterResto(searchText, allRestaurants);
       setFilteredRestaurants(data);
   };
+
+  const online = useOnline();
+
+  if(!online){
+    return(
+      <h1>u r offline</h1>
+      )
+  }
 
   if (!allRestaurants) return null;
 
