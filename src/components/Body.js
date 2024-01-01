@@ -28,10 +28,10 @@ const Body = () => {
     const json = await data.json();
     console.log(json);
     setAllRestaurants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }catch(error){
     console.error("An error occured:", error)
@@ -53,13 +53,18 @@ const Body = () => {
 
   if (!allRestaurants) return null;
 
+  // const searchbtnCss = {
+  //   backgroundColor:"red"
+  // }
+
   return allRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="search-container p-4 bg-slate-300 my-2 flex justify-center">
         <input
           type="text"
+          className="focus:bg-slate-200 p-2 m-2 w-96"
           placeholder="Search.........."
           value={searchText}
           onChange={(e) => {
@@ -67,11 +72,11 @@ const Body = () => {
           }}
         />
 
-        <button className="search-btn" onClick={handleSearch}>
+        <button className="search-btn p-2 m-2 bg-blue-400 rounded-md hover:bg-blue-600" onClick={handleSearch}>
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap justify-evenly">
         {filteredRestaurants.length === 0 ? (
           <h1>No results found</h1>
         ) : (
